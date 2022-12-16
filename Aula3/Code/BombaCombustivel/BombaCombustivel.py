@@ -111,7 +111,7 @@ class Veiculo:
 
     '''Fazer sair um som de buzina'''
     def buzinar(self):
-        playsound("horn.wav")
+        playsound("programacao_oo/Aula3/Code/BombaCombustivel/horn.wav")
 
 
 # Testes

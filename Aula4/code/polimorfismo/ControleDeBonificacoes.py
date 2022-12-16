@@ -1,6 +1,6 @@
 #se der erro talvez seja necessario executar o seguinte comando no terminal
 #export PYTHONPATH="${PYTHONPATH}:path_para_a_pasta"
-from heranca.Funcionario import Funcionario,Gerente 
+from Funcionario import Funcionario,Gerente 
 
 class ControleDeBonificacoes:
 

@@ -27,27 +27,36 @@ class Gerente(Funcionario):
 
 '''Vamos criar a classe Diretor que herda de Fucionario sem o método get_bonificacao():'''
 class Diretor:
-    def __init__(self, nome, cpf, salario):
+    def __init__(self, nome, cpf, salario, codigo):
+        # super().__init__(nome, cpf, salario) #Error
         self._nome = nome
         self._cpf = cpf
-        self._salario = salario   
+        self._salario = salario
+        self.codigo = codigo
         
     def get_bonificacao(self):
         return self._salario * 0.5 + 1000           
 
 if __name__ == '__main__':
-    #f = Funcionario() #erro
 
-    '''conseguimos instanciar suas filhas que são objetos que 
-    realmente existem em nosso sistema (objetos concretos):'''
+    '''Não conseguimos instanciar uma subclasse de Funcionario 
+    sem implementar o método abstrato get_bonificacao().'''
+    # f = Funcionario() #erro
+
+    
     gerente = Gerente('jose', '222222222-22', 5000.0, '1234', 0)
     print(gerente.get_bonificacao())
     
     Funcionario.register(Diretor)
-    '''Não conseguimos instanciar uma subclasse de Funcionario 
-    sem implementar o método abstrato get_bonificacao().'''
-    diretor = Diretor('joao', '111111111-11', 4000.0) #erro
+
+    diretor = Diretor('joao', '111111111-11', 4000.0, 'xxx')
+
+    '''conseguimos instanciar suas filhas que são objetos que 
+    realmente existem em nosso sistema (objetos concretos):'''
+
+
     print(isinstance(diretor,Funcionario))
     print(issubclass(Diretor,Funcionario))
     print(diretor.get_bonificacao())
+    print(diretor.codigo)
     
